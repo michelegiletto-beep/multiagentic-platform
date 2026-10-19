@@ -1,0 +1,28 @@
+MULTIAGENTIC PLATFORM 1.1.25 — INIZIA QUI
+
+REQUISITI
+Windows 10 o 11 a 64 bit; Microsoft Edge; .NET Framework 4.8. Node.js è incluso. Non serve Python, un ambiente di sviluppo o una GPU. Serve una connessione Internet quando colleghi un broker. Windows PowerShell, incluso in Windows, serve al recupero verificato dei lock degli intenti. Le eventuali chiavi e autorizzazioni broker si ottengono dal broker e restano personali.
+
+INSTALLAZIONE
+1. Controlla versione e SHA-256 con quelli pubblicati dal distributore. La presenza o assenza di firma Authenticode è indicata nel manifest della consegna.
+2. Esegui MultiagenticPlatform-Setup-1.1.25.exe con il tuo utente Windows. Non è prevista una richiesta di privilegi amministrativi.
+3. Il programma viene installato in %LOCALAPPDATA%\Programs\Multiagentic Platform\1.1.25. Trovi un collegamento con la versione sul Desktop e nel menu Start.
+4. Il primo avvio è vuoto: nessun agente, conto o ordine preconfigurato. Non parte trading automatico dopo l'installazione.
+
+PROVA SENZA CREDENZIALI
+Nell'Agents Hub scegli il pulsante per creare un agente, scegli nome e aspetto e continua. Nella schermata del broker puoi scegliere “Apri senza collegare il conto”. Se appare la schermata di accesso del terminale, scegli anche “Continua come osservatore”. Questa modalità non connette un broker, non dà quotazioni reali verificate e non autorizza ordini. Non scambiare eventuali elementi grafici o livelli locali per dati live.
+
+CONNESSIONE AL PROPRIO CONTO
+L'ambiente iniziale selezionato è Conto reale. Scegli il tuo broker e inserisci soltanto le credenziali API del tuo conto personale, verifica il collegamento e confermalo. Capital.com, IG CFD e OANDA restano adapter effettivi: non vengono sostituiti da simulatori o conti campione. Se hai un conto demo del broker puoi selezionarlo esplicitamente, usando le sue credenziali corrette. Capital.com usa identificativo/email, chiave API e password API; IG CFD richiede le credenziali previste dal suo accesso API; OANDA usa ID conto e token API. Scegli l'ambiente corrispondente alle tue credenziali: un conto demo broker è distinto da un conto reale. Non inviare chiavi, password o dati di conto a chi presenta il software.
+Collegare un broker è un'azione esplicita dell'utente. Prima di attivare strategie o selezioni operative, leggi i limiti noti e verifica provider, aggiornamento dei prezzi, fondi, ordini e posizioni. Per un conto reale servono le autorizzazioni del broker e una decisione consapevole dell'utente; la release pubblica non è una raccomandazione a usarlo live.
+
+DATI LOCALI E AGGIORNAMENTI
+Nella distribuzione pubblica i dati utente sono separati dal programma: %LOCALAPPDATA%\Multiagentic Platform\data\v1. Non vengono importati automaticamente dati da installazioni precedenti. Le credenziali memorizzate usano la protezione Windows prevista dall'app. Esporta il profilo operativo dall'app prima di migrare dispositivo o modificare l'installazione. Non cancellare manualmente cartelle di dati.
+
+DISINSTALLAZIONE
+Chiudi l'app con “Esci e arresta i servizi locali”, poi usa Impostazioni Windows > App oppure Uninstall.exe nella cartella della versione. La disinstallazione rimuove il programma, i collegamenti e la relativa registrazione Windows; i dati locali separati restano sul dispositivo. Ordini e posizioni esistenti sul broker non vengono chiusi dalla disinstallazione. Per cancellare dati e credenziali locali serve una scelta separata dell'utente.
+
+SE NON SI APRE
+Chiudi completamente un'altra versione già in esecuzione: la porta locale può essere occupata. Non disattivare protezioni del sistema per aggirare un avviso. Comunica al progetto versione, errore e informazioni diagnostiche prive di chiavi e dati personali.
+
+Copyright (c) 2026 Michele Giletto. Leggi LICENSE.txt, THIRD-PARTY-NOTICES.txt e KNOWN-LIMITATIONS.txt.

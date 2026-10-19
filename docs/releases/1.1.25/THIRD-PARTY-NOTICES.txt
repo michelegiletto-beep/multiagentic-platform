@@ -1,0 +1,13 @@
+COMPONENTI DI TERZI — DISTRIBUZIONE 1.1.25
+
+Il codice e gli asset originali dell'app sono proprietari di Michele Giletto; i componenti seguenti mantengono licenze e attribuzioni proprie.
+
+- Node.js 22.13.1: runtime incluso, con testo delle licenze e attribuzioni in licenses/NODE-LICENSE.txt.
+- ws: libreria WebSocket, licenza inclusa in licenses/WS-LICENSE.txt e nella cartella del pacchetto.
+- TradingView Lightweight Charts 4.2.0: Apache-2.0; copyright e attribuzione del grafico mantenuti. Testo in licenses/LIGHTWEIGHT-CHARTS-LICENSE.txt. Non implica affiliazione con TradingView.
+- Lightstreamer Node.js Client: Apache-2.0, licenza inclusa in licenses/LIGHTSTREAMER-LICENSE.txt e nel pacchetto SDK.
+- Cloudflare cloudflared: Apache-2.0; testo incluso in licenses/CLOUDFLARED-LICENSE.txt. Nessuna partnership o approvazione dei broker/provider è implicita.
+
+Sono inoltre incluse le licenze dei componenti transitivi del client IG (faye-websocket, http-parser-js, safe-buffer, websocket-driver, websocket-extensions, xmlhttprequest e xmlhttprequest-cookie), nelle rispettive cartelle del pacchetto. pdf-lib conserva la licenza in runtime/app/vendor/pdf-lib.LICENSE.md.
+
+Qwen, llama.cpp e runtime CUDA/Vulkan non sono inclusi in questa release NATIVE_ONLY. La distribuzione usa fallback dei font di sistema e non richiede richieste a servizi di font esterni. esbuild è uno strumento di build privato e non è necessario per eseguire il programma.

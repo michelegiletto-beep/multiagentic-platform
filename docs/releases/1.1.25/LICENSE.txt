@@ -1,0 +1,10 @@
+MULTIAGENTIC PLATFORM 1.1.25 — TERMINI DI DISTRIBUZIONE BINARIA
+Copyright (c) 2026 Michele Giletto. Tutti i diritti riservati sulle parti originali del progetto.
+
+Questa distribuzione consente di installare e usare il programma tramite le sue interfacce ufficiali. Non concede una licenza open source sul codice originale, sui dataset, sulle ricette di training o sui modelli proprietari. La distribuzione del programma o dei suoi componenti originali in prodotti derivati, la concessione in sublicenza e lo sfruttamento dei relativi asset come prodotto autonomo richiedono autorizzazione scritta del titolare.
+I diritti e le eccezioni inderogabili previsti dalla legge applicabile restano salvi. I componenti di terzi rimangono regolati dalle proprie licenze, riportate in THIRD-PARTY-NOTICES.txt e nella cartella licenses; questi termini non ne restringono i diritti concessi.
+
+La release è fornita nello stato documentato, con limiti noti. Non è un servizio di consulenza finanziaria e non promette risultati, profitti o assenza di errori. Dati, costi, disponibilità dei mercati ed esecuzione dipendono anche da provider e broker. Prima di operare, verifica configurazione del tuo conto, dati correnti, protezioni e stato degli ordini sul broker. Un conto demo del broker resta una scelta facoltativa dell'utente. Leggi KNOWN-LIMITATIONS.txt.
+
+Le risorse JavaScript compilate/minificate, un helper Windows PowerShell per il recupero dei lock e gli artefatti di inferenza necessari sono componenti runtime della distribuzione; non sono una garanzia di non estraibilità. Non sono distribuiti dataset o strumenti di addestramento.
+Per diritti ulteriori, licenza commerciale, redistribuzione o acquisizione del progetto, contattare Michele Giletto attraverso i canali ufficiali del progetto.

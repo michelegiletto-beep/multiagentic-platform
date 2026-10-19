@@ -1,0 +1,11 @@
+LIMITI NOTI — MULTIAGENTIC PLATFORM 1.1.25
+
+Questa è una release pubblica completa, basata sulla rc.49 con una nuova preparazione e verifica del packaging. Il numero di release non certifica la risoluzione di tutti i problemi di runtime.
+
+L'ultima verifica live disponibile ha riprodotto stream dichiarati connessi con prezzi non aggiornati, fallback REST solo parziale, timeout diagnostici e BROKER_DISPATCH_NOT_SENT. Questa distribuzione non dichiara di correggere tali finding. Una connessione aperta non prova che le quotazioni siano fresche. Il dato non confermato non viene reso valido estendendone artificialmente la durata.
+
+Modalità NATIVE_ONLY: i motori algoritmici e i modelli specializzati operano localmente; Luna/OpenAI e Qwen sono disabilitati. Non sono inclusi il modello Qwen o runtime GPU/LLM, e l'installazione non li scarica. Nessuna chiave OpenAI è richiesta. I fit SPINS verificati appartengono a campagne CPU su dati sintetici di policy; non attestano rendimento di mercato o training GPU. Questo descrive il precedente addestramento dei modelli: il prodotto distribuito non contiene fixture, conti campione o quotazioni sintetiche. I dati di mercato e di conto provengono dal broker collegato dall’utente.
+
+Capital.com dispone di implementazione e verifiche live documentate, con i limiti sopra. I connettori IG CFD e OANDA dispongono di test mock; non viene dichiarata una certificazione live di tutti i broker o di più broker simultanei. Le protezioni, gli ordini e le posizioni vanno verificati anche sul conto broker.
+
+I test di installazione, primo avvio e disinstallazione sono svolti con profili e dati isolati, senza credenziali o ordini reali. Non sono un test di redditività. Non sono inclusi dati personali dell'autore, conti, posizioni, saldi, log privati o dataset di ricerca.

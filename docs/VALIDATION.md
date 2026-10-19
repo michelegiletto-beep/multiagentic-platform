@@ -1,16 +1,27 @@
 # Validation protocol
 
-This protocol specifies how Multiagentic Platform can be evaluated without publishing proprietary model recipes or trading logic. It is an evaluation plan. The tests and acceptance gates below are not presented as completed results.
+This document separates the recorded release-package checks from the broader evaluation protocol for Multiagentic Platform. The protocol defines further evaluation without publishing proprietary model recipes or trading logic; its proposed tests and acceptance gates are not presented as completed results.
+
+## Release 1.1.25 package checks
+
+The developer's [TEST-RESULTS.json](releases/1.1.25/TEST-RESULTS.json), dated 19 October 2026, reports **64 compiled native, SPINS, intent, position, broker and supervisor-consumer tests passed, with no failures**. The tests used mock clients, no real account or market execution, and unchanged assertions. Exact production-EXE extraction verified 494 payload files, with no prior installation or Qwen model required.
+
+Windows installation, shortcuts, uninstall registration and removal were checked in a disposable QA namespace using the same runtime. The record distinguishes that QA executable from the production installer: production-profile configuration was statically verified, and the QA install method was invoked through reflection. Native first launch had no preconfigured agents, accounts or trading workers. The observed broker forms defaulted to live accounts, with no credentials populated; their 202 UI assets matched the final package. These are recorded package and interface checks, not executed broker transactions.
+
+Uninstall QA removed the program, shortcuts and registration while preserving an external canary. The launcher and browser were terminated using path and process-ownership checks; native graceful-shutdown confirmation was not tested. Checks ran on the existing Windows host under isolated namespaces, without a clean new-user or virtual-machine matrix. The final EXE is **Authenticode `NotSigned`**, and no publisher certificate was available. Its verified SHA-256 is `0fbafa46452a4c9bac3a53c395d778ec50c4312f82119cada7078d25ec9e608b`.
+
+The personal installation and operational data were untouched. Live broker/market performance was not tested in this campaign. The recorded stale-price, partial REST-fallback, diagnostic-timeout and `BROKER_DISPATCH_NOT_SENT` findings remain disclosed; full IG/OANDA live qualification and simultaneous multi-broker certification are not established. [Release provenance](releases/1.1.25/README.md) identifies the copied records and their hashes.
 
 ## Evidence categories
 
-Every externally stated claim should identify its scope and supporting record. The 19 October 2026 review considered historical terminal build 1.1.25-rc.49, separate SCALPING LAB package 2.2.6, selected implementation files and existing records. The review did not launch the programs, contact brokers or execute trades. Static inspection, internal test records, training provenance and operational observations are different evidence categories. The project's public release designation does not alter those records; a later installer must identify its own version and the checks actually completed for that package.
+Every externally stated claim should identify its scope and supporting record. The 19 October 2026 historical review considered terminal build 1.1.25-rc.49, separate SCALPING LAB package 2.2.6, selected implementation files and existing records. That review did not launch the programs, contact brokers or execute trades. The separate 1.1.25 packaging campaign is described above. Static inspection, package QA, internal test records, training provenance and operational observations are different evidence categories; public release does not merge their conclusions.
 
 | Category | Evidence available in this dossier | Permitted conclusion |
 | --- | --- | --- |
 | Public source record | Platform description and VESPER RFC | The programme, research questions and stated status are documented. |
 | Source-inspected implementation | Terminal, separate research lab, native workflows, SPINS artifacts, optional LLM code and broker adapters | Selected components and wiring exist in code. |
 | Documented training | Local PyTorch CPU reports linked by artifact hashes to shipped SPINS models | Synthetic policy fits were executed; market-profit prediction and GPU training are not established. |
+| Release 1.1.25 package QA | 64 compiled mock tests, 494-file exact payload check and isolated Windows install/first-launch/uninstall checks | Supports the recorded package and interface scope; not clean-VM, live-broker or financial-performance qualification. |
 | Internal software verification | Selected software checks, targeted benchmarks and provider mock tests | Tests support their declared software scope; they do not qualify continuous live operation. |
 | Recorded operational observations | Capital.com live observations and passive audit dated 16 October 2026 | The latest recorded audit reports unresolved feed continuity, stale quotes and degraded diagnostics. |
 | Validation pending | SPINS final gates, enabled LLM operation, saturated fallback and live provider qualification | Deployment readiness and end-to-end operational reliability remain separate gates. |

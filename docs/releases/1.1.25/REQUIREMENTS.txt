@@ -1,0 +1,1 @@
+Windows 10/11 x64; Microsoft Edge; .NET Framework 4.8; Windows PowerShell. Node.js incluso. Nessuna GPU, Python, chiave OpenAI o installazione precedente richiesta. Internet e credenziali personali del proprio broker necessari solo per la connessione scelta dall’utente. Leggi START-HERE.txt e KNOWN-LIMITATIONS.txt.

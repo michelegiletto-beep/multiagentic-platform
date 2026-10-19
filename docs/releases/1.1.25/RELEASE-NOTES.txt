@@ -1,0 +1,9 @@
+MULTIAGENTIC PLATFORM 1.1.25 — RELEASE NOTES
+
+Prima distribuzione pubblica completa della linea 1.1.25, con base operativa rc.49. Installer per utente Windows, versione e collegamenti identificabili, primo avvio senza conti, percorso senza credenziali e configurazione del proprio conto reale, senza credenziali precompilate. Dati pubblici separati dai file del programma e conservati alla disinstallazione; nessuna importazione automatica di profili personali.
+
+Motore NATIVE_ONLY con componenti SPINS necessari al runtime. Luna/OpenAI e Qwen disabilitati; nessun modello LLM, trainer, dataset riservato, TypeScript originale o source map distribuito. Sono incluse risorse runtime JavaScript compilate/minificate, un helper Windows PowerShell indispensabile al recupero sicuro dei lock e le licenze dei componenti effettivamente distribuiti.
+
+Questa release modifica distribuzione e onboarding, non dichiara nuove strategie o correzioni dei finding feed/timeout noti. Consulta KNOWN-LIMITATIONS.txt. I risultati del nuovo collaudo del pacchetto sono pubblicati in TEST-RESULTS.json, separati dai test storici della rc.49. Nessuna garanzia di profitto o stabilità assoluta.
+
+Copyright (c) 2026 Michele Giletto. Distribuzione binaria proprietaria; componenti terzi con licenze proprie.

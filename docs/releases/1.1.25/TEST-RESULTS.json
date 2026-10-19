@@ -1,0 +1,88 @@
+{
+  "version": "1.1.25",
+  "date": "2026-10-19",
+  "status": "PACKAGING_AND_ISOLATED_QA_PASSED_WITH_KNOWN_RUNTIME_LIMITATIONS",
+  "checks": [
+    {
+      "name": "Compiled native/SPINS/intent/position/broker/supervisor consumer tests",
+      "status": "PASS",
+      "tests": 64,
+      "passed": 64,
+      "failed": 0,
+      "assertionsChanged": false,
+      "scope": "Mock clients; no real account, market execution or paid AI.",
+      "finalFinancialModulesByteIdentical": 267
+    },
+    {
+      "name": "Exact production installer embedded payload, privacy and integrity",
+      "status": "PASS",
+      "filesHashed": 494,
+      "forbiddenTestOrDevelopmentFiles": 0,
+      "personalPathOrCredentialPatternMatches": 0,
+      "runtimeScriptException": "One essential Windows intent-lock recovery helper; documented, not a trainer."
+    },
+    {
+      "name": "Exact production EXE standalone extraction",
+      "status": "PASS",
+      "filesVerified": 494,
+      "priorVersionRequired": false,
+      "qwenModelRequired": false
+    },
+    {
+      "name": "Windows per-user installation, shortcut and uninstall registration",
+      "status": "PASS",
+      "namespace": "Disposable QA namespace with same runtime; production profile statically verified. Actual Install method invoked on QA EXE via reflection."
+    },
+    {
+      "name": "Native first launch of final QA package",
+      "status": "PASS",
+      "preconfiguredAgents": 0,
+      "accounts": 0,
+      "tradingWorkers": 0,
+      "brokerCredentialsEntered": false
+    },
+    {
+      "name": "Setup preview, virgin Hub, real-account broker forms, observer terminal",
+      "status": "PASS",
+      "brokerForms": [
+        "Capital.com",
+        "IG CFD",
+        "OANDA"
+      ],
+      "hubAndTerminalDefault": "LIVE",
+      "uiAssetsByteIdenticalToFinal": 202,
+      "consoleErrorsOrWarningsInObservedFinalFlow": 0,
+      "credentialsPrepopulated": false
+    },
+    {
+      "name": "QA uninstall",
+      "status": "PASS",
+      "programRemoved": true,
+      "shortcutsRemoved": true,
+      "registryRemoved": true,
+      "externalCanaryPreserved": true,
+      "qualification": "Disposable QA launcher/browser terminated with exact path and process ownership checks; native graceful shutdown confirmation was not tested."
+    },
+    {
+      "name": "Personal installation and operational data",
+      "status": "UNTOUCHED",
+      "qualification": "No production install/uninstall, broker/account request, position operation or personal import was performed."
+    },
+    {
+      "name": "Live broker/market performance",
+      "status": "NOT_TESTED_IN_THIS_CAMPAIGN",
+      "qualification": "Existing stale-price/REST fallback/timeout/BROKER_DISPATCH_NOT_SENT findings remain disclosed; IG/OANDA live and simultaneous multi-broker certification not claimed."
+    },
+    {
+      "name": "Clean new Windows user/VM matrix and signed publisher identity",
+      "status": "NOT_TESTED_OR_NOT_AVAILABLE",
+      "qualification": "Tests ran on this Windows host under isolated QA namespaces. Authenticode: NotSigned; no publisher certificate available."
+    }
+  ],
+  "historicalRc49ChecksNotRelabeled": true,
+  "runtimeMode": "NATIVE_ONLY",
+  "lunaAndQwenEnabled": false,
+  "realAccountAdaptersRetained": true,
+  "syntheticMarketFeedOrSampleAccountBundled": false,
+  "sourceQualification": "Necessary compiled/minified JavaScript and a Windows runtime script remain inspectable. Essential SPINS inference weights are included. Original TypeScript/developer checkout, maps, training tools, datasets and private operational logs are excluded."
+}

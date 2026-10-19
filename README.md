@@ -1,26 +1,35 @@
 # Multiagentic Platform
 
-**Multiagent trading research and portfolio allocation**
+**Windows trading software for your own live broker account**
 
-[Available releases](#download) · [Hugging Face Space](https://huggingface.co/spaces/Magic51/multiagentic-platform) · [Platform dossier](docs/ARCHITECTURE.md) · [SPINS](docs/SPINS.md) · [Scalping Lab](docs/SCALPING_LAB.md) · [VESPER](docs/VESPER.md) · [Support development](#support)
+[Download for Windows](#download) · [Installation guide](docs/INSTALLATION.md) · [Hugging Face Space](https://huggingface.co/spaces/Magic51/multiagentic-platform) · [Platform dossier](docs/ARCHITECTURE.md) · [SPINS](docs/SPINS.md) · [Scalping Lab](docs/SCALPING_LAB.md) · [VESPER](docs/VESPER.md) · [Support development](#support)
 
-Multiagentic Platform is the flagship trading research and portfolio allocation programme developed by Michele Giletto at System Labs. It develops the Reasoning Agent into a coordinated environment for market analysis, statistical learning and bounded decision workflows. In its first equity-portfolio application, agents work with market observations, positions, exposure and proposed allocation decisions within a common operating context.
+Multiagentic Platform is the flagship Windows trading application developed by Michele Giletto at System Labs. It develops the Reasoning Agent into a coordinated environment for market analysis, portfolio allocation and authorised broker execution. Users connect their own compatible live broker accounts so that agents and native services can work with account observations, market quotes, positions, exposure and proposed decisions within a common operating context.
 
-The installed implementation combines native analytical services, SPINS model components, broker adapters and explicit execution controls. Optional LLM integration code is present; the inspected build selects `NATIVE_ONLY` and disables those paths. Shipped SPINS artifacts are linked to documented local CPU training runs. VESPER is a complementary research track for inference under memory and I/O constraints.
+The installed implementation combines native analytical services, SPINS model components, broker adapters and explicit execution controls. Inspected adapters cover Capital.com, IG and OANDA, with different levels of recorded operational qualification as detailed below. Optional LLM integration code is present; the inspected build selects `NATIVE_ONLY` and disables those paths. Shipped SPINS artifacts are linked to documented local CPU training runs for synthetic instruction-policy imitation. That training evidence concerns the learned instruction policies; account and market observations come from the connected broker. VESPER is a complementary research track for inference under memory and I/O constraints.
 
-**Public release version: 1.1.25.** The Windows installer is being prepared for publication through GitHub Releases. Availability of the executable is recorded in [Download](#download).
+**Public release version: 1.1.25.** The Windows distribution starts with an empty Agents Hub and supports onboarding for each user's own live broker account. Users supply their own broker credentials and explicitly authorise account access and trading operation. No broker credentials or developer account are preconfigured, and installation does not start automatic trading. An observer path is available before connecting an account.
 
-Installed build **1.1.25-rc.49** was inspected statically on **19 October 2026**, alongside training, software-verification and passive operational records. That identifier is retained to identify the historical evidence reviewed; the public installer has been assigned version **1.1.25** and requires its own package checks. The review did not launch the program, call brokers or place trades. Public release status does not establish additional operational qualification. Implementation source, model weights, training data and credentials remain proprietary and excluded from this repository.
+Installed build **1.1.25-rc.49** was inspected statically on **19 October 2026**, alongside training, software-verification and passive operational records. That identifier identifies the historical evidence reviewed. The public **1.1.25** distribution has a separate [package and isolated QA record](docs/releases/1.1.25/TEST-RESULTS.json), including 64 passing compiled tests with mock clients. Neither review establishes new live-broker qualification. The installer contains compiled/minified runtime resources and essential SPINS inference weights under a proprietary binary licence; original development sources, source maps, trainers, datasets and private operational records are excluded.
 
 ## Download
 
-[View available releases](https://github.com/michelegiletto-beep/multiagentic-platform/releases)
+[Download Multiagentic Platform 1.1.25 for Windows](https://github.com/michelegiletto-beep/multiagentic-platform/releases/download/v1.1.25/MultiagenticPlatform-Setup-1.1.25.exe) · [Release notes](docs/releases/1.1.25/RELEASE-NOTES.txt) · [Installation guide](docs/INSTALLATION.md)
 
-No Windows installer is currently attached to a public release. GitHub's **Download ZIP** downloads this documentation repository, not the application. The **1.1.25** installer, installation instructions, licence terms and SHA-256 checksum will be added to the release record after the package has been checked and uploaded. Checks of that installer will be reported separately from the historical build inspection below.
+Requires **Windows 10 or 11 x64**, Microsoft Edge, .NET Framework 4.8 and Windows PowerShell. Node.js is included; no Python, GPU, OpenAI key or previous installation is required. The installer runs per user without an administrator request. Internet access and personal broker credentials are required when connecting a broker.
+
+| Installer | Verified delivery metadata |
+| --- | --- |
+| File | `MultiagenticPlatform-Setup-1.1.25.exe` |
+| Size | 84,921,344 bytes |
+| SHA-256 | `0fbafa46452a4c9bac3a53c395d778ec50c4312f82119cada7078d25ec9e608b` |
+| Authenticode | `NotSigned`; no publisher certificate is included. |
+
+Read the [binary licence](docs/releases/1.1.25/LICENSE.txt) and [known limitations](docs/releases/1.1.25/KNOWN-LIMITATIONS.txt) before installation. Check the downloaded file's SHA-256 against the value above. GitHub's **Download ZIP** downloads the documentation repository; the installer is the `.exe` linked above. File provenance and package-test scope are recorded in the [release record](docs/releases/1.1.25/README.md).
 
 ## Interface
 
-![Multiagentic Platform trading research interface with an instrument list, candlestick workspace and agent companion](assets/trading-terminal.jpg)
+![Multiagentic Platform trading interface with an instrument list, candlestick workspace and agent companion](assets/trading-terminal.jpg)
 
 Developer-supplied interface screenshot showing an instrument list, a candlestick workspace and an agent companion. Displayed prices and chart levels are screen content, not live data or measured strategy performance. Broker integration status is described in the evidence table below.
 
@@ -33,7 +42,7 @@ The inspected implementation separates these responsibilities:
 | Component | Responsibility |
 | --- | --- |
 | Statistical and neural components | Load versioned analytical and SPINS model artifacts; final activation and validation gates remain explicit. |
-| Specialist agents | Perform bounded market analysis and portfolio research tasks, exchanging structured results. |
+| Specialist agents | Perform bounded market analysis and portfolio decision tasks, exchanging structured results. |
 | Optional LLM supervision | Produce scoped explanations or structured proposals; disabled in the inspected native-only build. |
 | Deterministic control layer | Apply permissions, portfolio exposure limits, admission rules and execution checks. |
 | Broker adapters | Translate authorised execution requests into provider-specific order and account semantics. |
@@ -45,6 +54,7 @@ The engineering difficulty lies in the interaction of temporal learning, changin
 
 | Statement | Evidence category | Current interpretation |
 | --- | --- | --- |
+| Public distribution 1.1.25 | Package integrity, compiled mock tests and isolated Windows QA | 64/64 compiled tests passed; installation, empty first launch, broker forms and uninstall checked in disposable namespaces. No new live-broker qualification. |
 | Inspected build 1.1.25-rc.49 and native agent workflow | Source-inspected implementation | Historical installed package and implementation examined; no execution test in this audit. |
 | SPINS — Special Instructions | Inspected artifacts and documented CPU training | Shipped model artifacts match training records; final gates remain. Synthetic policy imitation does not establish profit prediction. |
 | SCALPING LAB 2.2.6 | Separate offline research implementation and campaign records | Includes inconclusive and non-baseline-beating results; no production promotion implied. |
@@ -77,4 +87,4 @@ Contact [Michele Giletto](mailto:michele.giletto@gmail.com?subject=Multiagentic%
 
 ## Copyright
 
-© 2026 Michele Giletto. All rights reserved. Multiagentic Platform is proprietary software. Public release and download availability do not grant rights to the implementation source or model weights. Use of a distributed installer is governed by the licence supplied with that release; this dossier grants no broad software licence. See [COPYRIGHT.md](COPYRIGHT.md). Citation metadata is provided in [CITATION.cff](CITATION.cff).
+© 2026 Michele Giletto. All rights reserved. Multiagentic Platform is proprietary software. The [binary licence](docs/releases/1.1.25/LICENSE.txt) permits installation and use through the application's official interfaces; original runtime components and SPINS inference weights remain proprietary. Public availability grants no open source licence to the implementation or models. See [COPYRIGHT.md](COPYRIGHT.md). Citation metadata is provided in [CITATION.cff](CITATION.cff).
