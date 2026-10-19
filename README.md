@@ -1,25 +1,35 @@
 # Multiagentic Platform
 
-**Public technical dossier · System Labs · Michele Giletto**
+**Multiagent trading research and portfolio allocation**
 
-Multiagentic Platform is the flagship product programme through which System Labs develops the Reasoning Agent into a coordinated environment for statistical learning, agent supervision and constrained resource allocation. Its first application is portfolio research: agents work with market observations, portfolio state and proposed allocation decisions within a common operating context.
+[Platform dossier](docs/ARCHITECTURE.md) · [SPINS](docs/SPINS.md) · [Scalping Lab](docs/SCALPING_LAB.md) · [VESPER](docs/VESPER.md) · [Support development](#support)
 
-The development programme combines a proprietary neural modelling component, training on developer-owned GPU infrastructure, an LLM supervisory orchestrator and explicit execution controls. VESPER contributes a complementary line of research into inference under memory and I/O constraints. The portfolio model and VESPER address different technical problems.
+Multiagentic Platform is the flagship trading research and portfolio allocation programme developed by Michele Giletto at System Labs. It develops the Reasoning Agent into a coordinated environment for market analysis, statistical learning and bounded decision workflows. In its first equity-portfolio application, agents work with market observations, positions, exposure and proposed allocation decisions within a common operating context.
 
-This repository contains public product documentation. It does not distribute the platform runtime, model weights, training data, proprietary configuration or broker credentials. The first software release is described by the developer as prepared; integration of neural components, orchestration and evaluation across the complete workflow remains in development.
+The installed implementation combines native analytical services, SPINS model components, broker adapters and explicit execution controls. Optional LLM integration code is present; the inspected release selects `NATIVE_ONLY` and disables those paths. Shipped SPINS artifacts are linked to documented local CPU training runs. VESPER is a complementary research track for inference under memory and I/O constraints.
+
+Installed release candidate **1.1.25-rc.49** was inspected statically on **19 October 2026**, alongside training, software-verification and passive operational records. The review did not launch the program, call brokers or place trades. This repository distributes the public dossier, not the runtime, source code, weights, training data or credentials.
+
+## Interface
+
+![Multiagentic Platform trading research interface with an instrument list, candlestick workspace and agent companion](assets/trading-terminal.jpg)
+
+Developer-supplied interface screenshot showing an instrument list, a candlestick workspace and an agent companion. Displayed prices and chart levels are screen content, not live data or measured strategy performance. Broker integration status is described in the evidence table below.
+
+The terminal's Scalping workspace presents instruments, quote freshness, positions, orders and recent activity. **SCALPING LAB 2.2.6** is a separate offline research package for historical-data quality, campaigns, static-versus-adaptive comparisons, replay and simulated results. Its [research workflow](docs/SCALPING_LAB.md) is distinct from the terminal's operational workspace.
 
 ## Technical scope
 
-The proposed architecture assigns different responsibilities to different components:
+The inspected implementation separates these responsibilities:
 
 | Component | Responsibility |
 | --- | --- |
-| Statistical and neural models | Produce numerical estimates from defined inputs and model versions. |
-| Specialist agents | Perform bounded analytical tasks and exchange structured results. |
-| LLM supervisor | Form bounded plans, select permitted tasks and interpret structured evidence. |
-| Deterministic control layer | Apply permissions, operating limits, admission rules and execution checks. |
-| Broker adapters | Translate authorised requests into a provider-specific execution contract. |
-| Audit and recovery services | Preserve decision context, reconcile state and support controlled recovery. |
+| Statistical and neural components | Load versioned analytical and SPINS model artifacts; final activation and validation gates remain explicit. |
+| Specialist agents | Perform bounded market analysis and portfolio research tasks, exchanging structured results. |
+| Optional LLM supervision | Produce scoped explanations or structured proposals; disabled in the inspected native-only release. |
+| Deterministic control layer | Apply permissions, portfolio exposure limits, admission rules and execution checks. |
+| Broker adapters | Translate authorised execution requests into provider-specific order and account semantics. |
+| Audit and recovery services | Preserve trading decision context, reconcile portfolio and execution state, and support controlled recovery. |
 
 The engineering difficulty lies in the interaction of temporal learning, changing portfolio state, heterogeneous agents, inference costs and execution reliability. A model that fits historical data does not by itself establish a useful allocation policy. A coherent agent plan does not establish that an action is permitted, executable or correctly recorded. Evaluation must measure those interfaces as well as each component.
 
@@ -27,19 +37,19 @@ The engineering difficulty lies in the interaction of temporal learning, changin
 
 | Statement | Evidence category | Current interpretation |
 | --- | --- | --- |
-| Portfolio allocation is the first application; observations, model outputs and execution controls are distinguished. | Existing public product description | Documented scope; runtime behaviour has not been independently inspected in this dossier. |
-| A first software release has been prepared. | Developer report, also stated publicly | No platform release binary or source package is distributed here. |
-| Neural training uses Michele Giletto's own GPUs. | Developer report, also stated publicly | Training logs, hardware inventory and measured compute are not supplied here. |
-| LLM supervision coordinates numerical models and specialist agents. | Target architecture; in development | End-to-end integration and comparative evaluation remain to be demonstrated. |
-| Operation can degrade predictably during LLM unavailability or resource saturation. | Target architecture | No completed end-to-end autonomy, saturation or failover test is asserted. |
-| Capital.com and other brokers can be approached through isolated adapters. | Proposed integration path | No existing, verified Capital.com adapter or broker endorsement is claimed. |
-| VESPER studies inference when model weights exceed available fast memory. | Published research design, RFC 0001 | The available RFC does not establish a working full-model runtime or measured speedup. |
+| Release candidate 1.1.25-rc.49 and native agent workflow | Source-inspected implementation | Installed package and implementation examined; no execution test in this audit. |
+| SPINS — Special Instructions | Inspected artifacts and documented CPU training | Shipped model artifacts match training records; final gates remain. Synthetic policy imitation does not establish profit prediction. |
+| SCALPING LAB 2.2.6 | Separate offline research implementation and campaign records | Includes inconclusive and non-baseline-beating results; no production promotion implied. |
+| Optional LLM supervision and fallback controls | Source-inspected implementation | Code exists; LLM paths disabled by `NATIVE_ONLY`. Saturated failover remains unmeasured. |
+| Capital.com | Inspected adapter and documented live observations | Latest recorded passive audit, 16 October 2026: feed continuity unresolved, with stale quotes and degraded diagnostics. |
+| IG and OANDA | Inspected adapters and internal mock tests | Full live qualification and provider approval are not established. |
+| VESPER resource-constrained inference | Published research design, RFC 0001 | No working full-model runtime or measured speedup established by that RFC. |
 
 No parameter count, model depth, training scale, predictive accuracy, execution latency or investment return is claimed without a corresponding measurement record.
 
 ## Public architecture and evaluation
 
-[Architecture](docs/ARCHITECTURE.md) describes the responsibility boundaries, supervisory role, degraded operation and broker integration path. [Validation](docs/VALIDATION.md) specifies the evidence required to assess predictive quality, orchestration value, resource behaviour and execution reliability. [VESPER](docs/VESPER.md) explains the complementary inference research track and its current evidence.
+[Implementation status](docs/IMPLEMENTATION_STATUS.md) records the inspected releases and limits. [Architecture](docs/ARCHITECTURE.md) explains component boundaries. [Validation](docs/VALIDATION.md) defines the evaluation protocol. [SCALPING LAB](docs/SCALPING_LAB.md) covers offline experiments; [VESPER](docs/VESPER.md) covers inference research.
 
 The public record includes the [platform overview](https://giletto-systems-lab.michele-giletto.chatgpt.site/reasoning-agent.html), [VESPER project](https://giletto-systems-lab.michele-giletto.chatgpt.site/projects/vesper.html) and [VESPER RFC 0001](https://giletto-systems-lab.michele-giletto.chatgpt.site/materials/VESPER_RFC_0001.md). These sources document the programme and its stated development status; they do not substitute for implementation inspection or independent testing.
 

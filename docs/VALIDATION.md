@@ -4,16 +4,21 @@ This protocol specifies how Multiagentic Platform can be evaluated without publi
 
 ## Evidence categories
 
-Every externally stated claim should identify its scope and supporting record. A public description verifies what has been stated, not that its implementation has been inspected or its behaviour reproduced.
+Every externally stated claim should identify its scope and supporting record. The 19 October 2026 review considered terminal release candidate 1.1.25-rc.49, separate SCALPING LAB package 2.2.6, selected implementation files and existing records. The review did not launch the programs, contact brokers or execute trades. Static inspection, internal test records, training provenance and operational observations are different evidence categories.
 
 | Category | Evidence available in this dossier | Permitted conclusion |
 | --- | --- | --- |
 | Public source record | Platform description and VESPER RFC | The programme, research questions and stated status are documented. |
-| Developer report | First software release prepared; training uses developer-owned GPUs | These are reported development facts, without supporting release inspection or training logs here. |
-| Proposed architecture | Typed tasks, bounded LLM plans, deterministic controls, degraded operation and broker adapters | These are design targets awaiting implementation and evaluation evidence. |
-| Measured platform result | No complete end-to-end platform result supplied | No validated autonomy, broker execution, predictive advantage or investment return follows from this dossier. |
+| Source-inspected implementation | Terminal, separate research lab, native workflows, SPINS artifacts, optional LLM code and broker adapters | Selected components and wiring exist in code. |
+| Documented training | Local PyTorch CPU reports linked by artifact hashes to shipped SPINS models | Synthetic policy fits were executed; market-profit prediction and GPU training are not established. |
+| Internal software verification | Selected software checks, targeted benchmarks and provider mock tests | Tests support their declared software scope; they do not qualify continuous live operation. |
+| Recorded operational observations | Capital.com live observations and passive audit dated 16 October 2026 | The latest recorded audit reports unresolved feed continuity, stale quotes and degraded diagnostics. |
+| Validation pending | SPINS final gates, enabled LLM operation, saturated fallback and live provider qualification | Deployment readiness and end-to-end operational reliability remain separate gates. |
+| End-to-end qualification | No complete qualification record supplied | Internal checks and historical observations do not establish uninterrupted autonomy, predictive advantage or investment returns. |
 
 A future result record should name the tested software and model versions, environment, workload, comparison conditions, exclusions, measurements and uncertainty. Independent review should distinguish source inspection, developer-run tests and reproduced results.
+
+SCALPING LAB campaigns include inconclusive and non-baseline-beating outcomes. Static-versus-adaptive comparisons and simulated curves must retain those results. Candidate export or a promotion record is a research workflow event; production deployment requires a separate, explicit qualification.
 
 ## Temporal data and leakage control
 
@@ -27,7 +32,9 @@ Use rolling or expanding temporal evaluation when it matches the intended deploy
 
 ## Numerical models and decision quality
 
-Specify the prediction target, horizon and intended use before choosing metrics. Evaluate numerical error, calibration and ranking or classification quality only where relevant to that target. Compare against simple persistence, statistical and other suitable baselines using the same data availability rules.
+Specify the task and intended use before choosing metrics. Policy imitation, pattern classification, price prediction and portfolio allocation require different evaluations. The inspected SPINS artifacts identify synthetic user-policy imitation as their training domain. Agreement with generated policy labels does not measure profit probability or market predictive advantage.
+
+For a prediction study, define the target and horizon, then evaluate numerical error, calibration and ranking or classification quality where relevant. Compare against simple persistence, statistical and other suitable baselines using the same data availability rules. For policy imitation, evaluate agreement, held-out policy cases and divergence from the intended rules separately from any market-outcome study.
 
 Distinguish prediction quality from allocation quality. An allocation study requires its own reference policy, exposure constraints and execution assumptions. If transaction costs, slippage, market impact, financing or product-specific charges are relevant, include and stress them explicitly. Avoid interpreting a frictionless historical simulation as evidence of attainable execution results.
 
@@ -35,7 +42,7 @@ Report uncertainty, failed cases and sensitivity to reasonable assumptions. Docu
 
 ## Orchestration baselines and ablations
 
-Compare the proposed system with a fixed workflow, a deterministic rule-based scheduler and an appropriate non-LLM allocation method. Keep inputs, numerical services, permissions and resource budgets comparable. Where budgets differ, report that difference rather than attributing the entire result to orchestration.
+Use the inspected native workflow as an explicit reference. The rc.49 package disables its optional LLM paths through `NATIVE_ONLY`; evaluating enabled LLM operation therefore requires a separately identified and qualified build or configuration. Compare that condition with a fixed workflow, a deterministic rule-based scheduler and an appropriate non-LLM method. Keep inputs, numerical services, permissions and resource budgets comparable.
 
 Useful ablations include removing LLM replanning, removing a specialist agent, replacing a numerical component with its baseline and disabling a resource-management optimisation. Each ablation should answer a stated question about the contribution of that component.
 
@@ -65,7 +72,9 @@ Begin with a provider-supported demo or sandbox environment and a declared adapt
 
 Exercise delayed responses, duplicate submissions, uncertain outcomes, partial completion, cancellation races and reconnection. Confirm that repeated or restarted work does not create unintended duplicate external actions. The audit record must support reconstructing what the platform requested and what the broker confirmed.
 
-A demo result should identify the environment and its limits. It does not establish identical live execution behaviour. Capital.com remains a proposed adapter target in this dossier; no completed compatibility or live account result is supplied.
+A demo result should identify the environment and its limits. It does not establish identical live execution behaviour. Capital.com live observations are documented, but the latest recorded passive audit on 16 October 2026 reports stale quotes despite a connected flag, diagnostic timeouts and degraded backend conditions. Verify feed freshness, time consistency and recovery directly; a connection flag is insufficient.
+
+IG and OANDA adapter implementation and mock tests require separate full live qualification. No verified resolution of the recorded Capital.com feed-continuity problem, continuous execution reliability or provider approval is established by this dossier.
 
 ## VESPER evaluation remains separate
 

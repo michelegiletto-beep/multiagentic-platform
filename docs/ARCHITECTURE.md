@@ -1,12 +1,28 @@
 # Public architecture
 
-This document describes the target architecture of Multiagentic Platform. It provides a technical account of the programme while withholding proprietary model structure, training recipes, resource thresholds and implementation details. Implementation and end-to-end behaviour require separate evaluation.
+![Source-inspected native execution and separate research tracks](../assets/architecture.svg)
+
+Component overview; the disabled LLM paths and separate research applications retain their own validation status.
+
+**Multiagent trading research and portfolio allocation**
+
+This document describes the implementation boundaries reviewed on 19 October 2026: terminal release candidate 1.1.25-rc.49 and the separate SCALPING LAB package 2.2.6. Selected code and training, software-verification and passive operational records were reviewed without launching the application, contacting a broker or placing trades. Proprietary recipes and thresholds remain outside this account. [Implementation status](IMPLEMENTATION_STATUS.md) distinguishes implemented components from outstanding qualification.
 
 ## Product lineage and system boundary
 
-Multiagentic Platform develops the Reasoning Agent programme into a shared environment for specialist agents, numerical models and controlled actions. Its first application is portfolio allocation. The public boundary includes observations, analytical outputs, proposed decisions, execution controls and the evidence connecting them.
+Multiagentic Platform develops the Reasoning Agent programme into a shared trading research environment for specialist agents, numerical models and controlled actions. Its first application concerns equity-portfolio analysis and allocation. The public boundary includes market observations, analytical outputs, proposed trading decisions, execution controls and the evidence connecting them.
 
 VESPER is a complementary inference research programme. It examines how a fixed model representation might be executed within explicit memory and I/O budgets when the complete weights cannot reside in fast memory. It is not the portfolio neural model, evidence of that model's parameter count or proof that the platform can already run a large model locally. The available VESPER RFC remains a research design.
+
+## Trading research workflow
+
+The implemented native workflow brings instrument observations together with positions, available capital and portfolio exposure. Specialist services contribute market analysis and structured evidence. Execution components consume scoped observations and proposals. Optional LLM integration is present in the code, while the inspected package selects native-only operation.
+
+Execution controls evaluate a proposal within its current account and portfolio context before an adapter requests an external action. The code distinguishes a research proposal, an authorised request and a confirmed broker outcome. Static inspection establishes these implementation boundaries; it does not establish that every boundary behaves correctly in operation.
+
+The terminal's Scalping workspace includes selected instruments, quote freshness, readiness, positions, orders and recent execution activity. Historical charts, grouping and filtering, and a compact monitor support observation across instruments. These interface components do not constitute evidence of measured strategy performance.
+
+SCALPING LAB is a separate offline research package. Its dashboard covers historical-data quality, campaign progress, static-versus-adaptive comparisons, historical replay, walk-forward evaluation, stress conditions and simulated results. Candidate export is subject to research gates and does not automatically install a change in the terminal. [SCALPING LAB](SCALPING_LAB.md) describes that boundary and the recorded limitations.
 
 ## Why the system requires more than model inference
 
@@ -18,47 +34,51 @@ The relevant complexity is therefore temporal, statistical and operational. Publ
 
 ## Statistical and neural component
 
-The neural modelling programme uses market histories and statistical features within explicit training and evaluation windows. The developer reports training on privately owned GPU infrastructure. This dossier does not include training logs, measured compute, hardware topology, parameter counts or independently reproduced model results.
+SPINS — Special Instructions — is represented in the installed package by model artifacts, engine code, readiness records and native runtime wiring. The aggregate manifest explicitly retains final gates. Its declared training domain is synthetic user-policy imitation, which concerns agreement with generated policy examples rather than market-profit probability.
 
-The numerical component is intended to return structured estimates accompanied by the model identity, input provenance and applicable validity conditions. Data preparation, fitting and evaluation must preserve the timing of information availability. Estimates require calibration and comparison with suitable statistical baselines before they can support an allocation claim.
+The inspected model-selection implementation loads scoped artifacts, validates their declared schema and domain, and rejects fixture artifacts for production use. Deterministic defaults are present when a valid learned profile is unavailable or cannot be selected within its decision window. A profile is fixed for the relevant setup rather than silently changing during its lifecycle. These are source-inspected mechanisms, not measured quality or reliability results.
 
-The internal network structure, feature engineering recipe, optimisation settings and trained weights remain proprietary. Their omission from this public dossier does not replace the need for evidence: an evaluation should provide sufficient controlled access or measurement records to test the claims under review.
+Offline training and dataset-export utilities are included. The inspected training code provides temporal splits, comparison of model alternatives and artifact integrity checks. Training reports document executed synthetic-policy fits, and artifact hashes link shipped SPINS models to documented local PyTorch CPU runs. The review did not rerun that training. Readiness and training records do not establish real-market validation or profit prediction.
+
+The reviewed evidence does not substantiate a GPU training campaign linked to the installed models. Public descriptions therefore identify the documented CPU runs. Model internals, feature recipes and weights remain proprietary; a technical evaluation can assess them under an agreed disclosure boundary.
 
 ## LLM supervisory orchestrator
 
-The proposed LLM supervisor operates over an explicit task interface. It can interpret a request, select permitted analytical tasks, form a bounded plan and combine structured results. Task contracts should identify required inputs, allowed operations, output types, resource limits and completion conditions.
+The installed source includes separate local-language and remote supervisory integration paths. The local companion works from scoped snapshots and structured facts to produce explanations. The remote supervisory path accepts structured proposals that are checked and compiled against current native context. Its output is not itself a confirmed external action.
 
-An LLM is useful at this layer when coordination requires interpreting heterogeneous evidence and adapting a plan to a changing context. Its contribution must be established against simpler orchestration baselines. Adding an LLM can also introduce latency, cost, invalid outputs and inconsistent plans; these are measurable engineering costs.
+The inspected compiler and caller code validate contracts, bind proposals to account and operation scope, and reject stale or incompatible context. Authoritative execution remains in the native worker. This separation provides an implemented boundary between semantic proposals and execution authority; its effectiveness still requires operational testing.
 
-Numerical estimates remain the responsibility of their identified models and analytical services. The supervisory layer should request those estimates and preserve their provenance. The deterministic control layer should independently validate task structure, permissions, deadlines and proposed state transitions before consequential actions proceed.
+Release candidate rc.49 explicitly sets `NATIVE_ONLY`. Its supervisor suppresses LLM calls, does not start the local language-model service and disables the remote operator. The existence of optional integration code therefore does not mean that this inspected release operates under active LLM supervision.
 
-The design does not depend on interpreting fluent language as proof of numerical correctness or authority. Structured outputs still require validation. Replanning must preserve the applicable limits and invalidate decisions whose required context has materially changed.
+LLM coordination can be evaluated for its contribution to interpreting heterogeneous evidence and selecting permitted tasks in a separately identified enabled condition. That evaluation must measure invalid proposals, changes in plan, resource costs and latency against the native reference workflow.
 
 ## Bounded autonomous and degraded operation
 
-Autonomy is an operating envelope: a declared set of tasks, permissions, resources and recovery behaviours. The intended platform should continue only within that envelope when an optional supervisory service becomes unavailable or saturated.
+Autonomy is an operating envelope: a declared set of tasks, permissions, resources and recovery behaviours. Native operation is implemented independently of optional LLM services. The native controller contains a standard native path when optional supervision is disabled or unavailable.
 
-The proposed control path includes bounded admission, explicit deadlines, limited retries and a policy for reducing workload. Resource pressure may require deferring new work, using an already authorised deterministic workflow, reducing analytical scope or abstaining from a new action. The appropriate response depends on the cause of degradation and the evidence still available.
+The inspected LLM guard implements bounded queues, deadlines, cancellation, capacity deferral and fallback results. It checks backend availability and physical inference-slot release rather than treating transport cancellation alone as proof that compute has stopped. Companion responses also fall back when a result is unavailable, incomplete or inconsistent with current scoped state.
 
-An LLM outage and neural inference saturation are distinct failures. A policy that tolerates the former may still depend on a functioning numerical service. If the numerical service cannot produce a valid estimate, the control path must use an explicitly authorised alternative or suspend the dependent decision. It cannot assume equivalent predictive quality from a reduced workload or an unavailable model.
+An LLM outage and numerical-service overload remain distinct failures. A fallback for the former does not establish equivalent learned-model quality or continued operation under every resource failure. Testing must establish which dependencies remain available and whether each condition leads to continued native work, deferral, reduced scope or abstention.
 
-Order admission, state reconciliation, permission enforcement and audit recording must remain effective during degraded operation. A claim of autonomous continuity requires fault-injection tests that show what completed, what was deferred, what was rejected and how state was recovered. No such completed end-to-end test record is supplied with this dossier.
+The presence of fallback code is verified by static inspection. Saturated failover timing, end-to-end continuity, state consistency and recovery were not measured in this audit. They require the fault-injection and reconciliation tests specified in the validation protocol.
 
 ## Broker adapter boundary
 
-Capital.com is a candidate integration target. A provider adapter would translate the platform's authorised requests into that broker's account, instrument and execution semantics. Other brokers require their own compatibility assessment. A common adapter interface does not make provider behaviour interchangeable.
+The installed implementation includes Capital.com, IG and OANDA adapters. Worker setup constructs the selected client, verifies its session and account context, and supplies it to execution components. The adapters implement provider-specific account, market-data and order-lifecycle operations behind a shared interface.
 
-The integration path should begin in a broker-supported demo or sandbox environment. It should verify authentication, instrument identity, market data timing, order validation, request outcomes, reconciliation, cancellation and recovery. Supported products, account permissions, geographic availability, API limits and execution rules must be checked against the provider's current documentation and the intended account.
+Capital.com code covers authentication, account binding, market and historical data, orders, positions, confirmations and streaming subscriptions. IG and OANDA implementations translate the shared interface into their native APIs and streaming mechanisms. Execution consumers distinguish acknowledgement from confirmed external state and contain reconciliation paths for uncertain outcomes.
 
-The broker boundary should retain credentials outside model prompts and restrict the supervisor to permitted operations. Request tracking, duplicate prevention and reconciliation should be verified under delayed responses, lost connections, partial completion and process restarts. When a response is uncertain, the platform should establish the broker's current state before deciding whether another request is appropriate.
+Broker mutations are guarded by scoped dispatch authorisation. The inspected Capital.com client avoids automatically retrying ambiguous mutation requests. Credentials and operational account records were outside this review's disclosure scope. No broker request was issued by the audit.
 
-Progression to a live account requires an account-specific evaluation and explicit operating authorisation. No existing verified Capital.com adapter, completed live execution integration, provider partnership or endorsement is asserted here. Portfolio research results would not by themselves validate execution through any broker.
+The reviewed operational records document Capital.com live observations. The latest recorded passive audit, dated 16 October 2026, reports stale quotes despite a connected flag, diagnostic timeouts and degraded backend conditions. Feed continuity remains unresolved in that record; a verified fix is not established by the reviewed evidence.
+
+IG and OANDA have implemented adapters and internal mock-test evidence, without full live qualification. A shared interface does not establish identical behaviour across instruments, accounts or brokers. Internal software checks also do not establish continuous feed freshness, live execution reliability or provider approval.
 
 ## Audit and recovery
 
-The target audit record links an observation and its timestamp to model versions, task requests, structured results, plan revisions, policy decisions, execution requests and reconciled outcomes. It should distinguish a proposed action from an authorised request and a confirmed external outcome.
+The installed source includes scoped event, decision-journal and recovery components. Their interfaces distinguish proposals, decisions, execution requests and application receipts. An operational evaluation must establish whether the resulting record is complete and consistent across interruption and recovery.
 
-Recovery should begin from durable records and reconciled external state. Tests must establish how interrupted tasks, uncertain execution outcomes and stale permissions are handled. The public validation protocol defines the evidence needed to evaluate those behaviours without disclosing proprietary algorithms.
+Tests must establish how interrupted tasks, uncertain execution outcomes and stale permissions are handled against durable records and reconciled external state. The public validation protocol defines the evidence needed to evaluate those behaviours without disclosing proprietary algorithms.
 
 ## Relationship to VESPER
 

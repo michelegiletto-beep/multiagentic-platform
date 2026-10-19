@@ -20,7 +20,7 @@ preferred-citation:
   url: "https://giletto-systems-lab.michele-giletto.chatgpt.site/reasoning-agent.html"
 abstract: >-
   Public technical documentation for the Multiagentic Platform programme,
-  including its target architecture, evidence boundaries, complementary
+  including its inspected implementation boundaries, complementary
   relationship to VESPER inference research, and proposed validation protocol.
   This dossier does not distribute the platform runtime or trained model weights.
 keywords:

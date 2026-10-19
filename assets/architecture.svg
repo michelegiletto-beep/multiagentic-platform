@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 650" role="img" aria-labelledby="title desc">
+  <title id="title">Multiagentic Platform: native execution and separate research tracks</title>
+  <desc id="desc">Market and account observations feed native analytical services and SPINS. Execution policy mediates requests to broker adapters and reconciliation. Optional LLM pathways are disabled in the inspected release. Scalping Lab is a separate offline research application; VESPER is inference research.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#a9c9d9" stroke-width="1.2"/></marker></defs>
+  <rect width="1280" height="650" rx="12" fill="#080e14"/>
+  <g fill="#e8eef2" font-family="Segoe UI,Arial,sans-serif">
+    <text x="42" y="49" font-size="12" letter-spacing="2" fill="#a3b1bd">SYSTEM LABS · COMPONENT ARCHITECTURE</text>
+    <text x="42" y="93" font-size="30">Multiagentic Platform</text>
+    <text x="42" y="122" font-size="15" fill="#a3b1bd">Source-inspected release candidate 1.1.25-rc.49</text>
+    <g fill="#101b24" stroke="#a9c9d940"><rect x="42" y="180" width="258" height="170" rx="8"/><rect x="346" y="180" width="258" height="170" rx="8"/><rect x="650" y="180" width="258" height="170" rx="8"/><rect x="954" y="180" width="284" height="170" rx="8"/></g>
+    <g font-size="18"><text x="62" y="216">Observations and state</text><text x="366" y="216">Native analysis and SPINS</text><text x="670" y="216">Execution policy</text><text x="974" y="216">Broker adapters</text></g>
+    <g font-size="14" fill="#a3b1bd"><text x="62" y="251">Market context</text><text x="62" y="279">Positions and account scope</text><text x="62" y="307">Timestamps and provenance</text><text x="366" y="251">Special Instructions</text><text x="366" y="279">Specialised learned components</text><text x="366" y="307">Structured analytical outputs</text><text x="670" y="251">Freshness and admissibility</text><text x="670" y="279">Authority and resource checks</text><text x="670" y="307">Requests and outcome records</text><text x="974" y="251">Capital.com · IG CFD · OANDA</text><text x="974" y="279">Order lifecycle</text><text x="974" y="307">State reconciliation</text></g>
+    <g stroke="#a9c9d9" stroke-width="1.5" fill="none" marker-end="url(#arrow)"><path d="M302 264H337"/><path d="M606 264H641"/><path d="M910 264H945"/></g>
+    <g fill="#0d151c" stroke="#a9c9d940" stroke-dasharray="5 5"><rect x="42" y="406" width="374" height="152" rx="8"/><rect x="436" y="406" width="392" height="152" rx="8"/><rect x="848" y="406" width="390" height="152" rx="8"/></g>
+    <g font-size="18"><text x="62" y="443">Optional LLM supervision</text><text x="456" y="443">Scalping Lab · separate application</text><text x="868" y="443">VESPER · inference research</text></g>
+    <g font-size="14" fill="#a3b1bd"><text x="62" y="477">Integration code present</text><text x="62" y="505">Disabled in this NATIVE_ONLY build</text><text x="62" y="533">Activation needs build-specific evaluation</text><text x="456" y="477">Datasets, campaigns and replay</text><text x="456" y="505">Baselines, temporal validation and stress</text><text x="456" y="533">Evidence before candidate promotion</text><text x="868" y="477">Memory and I/O budgets</text><text x="868" y="505">Numerical fidelity and latency</text><text x="868" y="533">Research RFC; runtime not established</text></g>
+    <text x="42" y="602" font-size="13" fill="#a3b1bd">Component relationships do not establish live reliability, model profitability or completed integration of research candidates.</text>
+    <text x="42" y="628" font-size="11" fill="#82929e">© 2026 Michele Giletto · All rights reserved in original project materials</text>
+  </g>
+</svg>
