@@ -10,7 +10,7 @@ This document describes the implementation boundaries reviewed on 19 October 202
 
 ## Product lineage and system boundary
 
-Multiagentic Platform develops the Reasoning Agent programme into a shared trading research environment for specialist agents, numerical models and controlled actions. Its first application concerns equity-portfolio analysis and allocation. The public boundary includes market observations, analytical outputs, proposed trading decisions, execution controls and the evidence connecting them.
+Multiagentic Platform is the first publicly released specialised application of the broader System Labs multiagentic systems programme. It develops the Reasoning Agent into a shared trading environment for specialist agents, numerical models and controlled actions. The public boundary includes market observations, analytical outputs, proposed trading decisions, execution controls and the evidence connecting them. The [multiagentic systems dossier](MULTIAGENTIC_SYSTEMS.md) describes the reusable architectural approach, its separation from this trading implementation and the planned integration into Orbital.
 
 VESPER is a complementary inference research programme. It examines how a fixed model representation might be executed within explicit memory and I/O budgets when the complete weights cannot reside in fast memory. It is not the portfolio neural model, evidence of that model's parameter count or proof that the platform can already run a large model locally. The available VESPER RFC remains a research design.
 
