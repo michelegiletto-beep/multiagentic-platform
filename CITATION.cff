@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Please cite this public technical dossier when referring to its published architecture or evaluation protocol."
+title: "Multiagentic Platform: Public Technical Dossier"
+authors:
+  - family-names: Giletto
+    given-names: Michele
+    affiliation: System Labs
+    email: michele.giletto@gmail.com
+date-released: 2026-10-19
+url: "https://giletto-systems-lab.michele-giletto.chatgpt.site/reasoning-agent.html"
+preferred-citation:
+  type: report
+  title: "Multiagentic Platform: Public Technical Dossier"
+  authors:
+    - family-names: Giletto
+      given-names: Michele
+      affiliation: System Labs
+  year: 2026
+  date-published: 2026-10-19
+  url: "https://giletto-systems-lab.michele-giletto.chatgpt.site/reasoning-agent.html"
+abstract: >-
+  Public technical documentation for the Multiagentic Platform programme,
+  including its target architecture, evidence boundaries, complementary
+  relationship to VESPER inference research, and proposed validation protocol.
+  This dossier does not distribute the platform runtime or trained model weights.
+keywords:
+  - multiagent systems
+  - statistical learning
+  - LLM orchestration
+  - resource allocation
+  - runtime control
+  - portfolio research

@@ -1,0 +1,44 @@
+# This repository is restricted to the public technical dossier.
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Credentials and private environment settings.
+.env
+.env.*
+*.pem
+*.key
+credentials*
+secrets*
+
+# Proprietary models, training data, runtime outputs and private review material.
+private/
+confidential/
+models/
+weights/
+checkpoints/
+datasets/
+training/
+logs/
+outputs/
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.parquet
+
+# Local publication packages and temporary files.
+*.zip
+*.tar
+*.tar.gz
+*.tmp
+*.bak
