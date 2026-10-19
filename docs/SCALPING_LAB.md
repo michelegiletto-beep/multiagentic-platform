@@ -4,7 +4,7 @@
 
 SCALPING LAB is an offline environment for evaluating changes to scalping engines through controlled historical experiments. It is separate from Multiagentic Platform's terminal Scalping workspace, which presents instruments, positions, orders and operational activity. The lab investigates candidate behaviour; the terminal manages an operating context and its authorised execution paths.
 
-Package metadata identifies the reviewed lab as version 2.2.6. A retained historical README uses the earlier label 2.0.1. Neither label should be confused with terminal release candidate 1.1.25-rc.49.
+Package metadata identifies the reviewed lab as version 2.2.6. A retained historical README uses the earlier label 2.0.1. Neither label should be confused with the inspected historical terminal build 1.1.25-rc.49 or the version of a subsequently published terminal installer.
 
 ## Research workflow
 

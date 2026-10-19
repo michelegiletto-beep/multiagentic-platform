@@ -1,8 +1,10 @@
 # Implementation status
 
-**Terminal:** 1.1.25-rc.49 · **SCALPING LAB:** 2.2.6 · **Review date:** 19 October 2026
+**Public release version:** 1.1.25 · **Inspected historical terminal build:** 1.1.25-rc.49 · **SCALPING LAB:** 2.2.6 · **Review date:** 19 October 2026
 
-The review examined installed package metadata, selected implementation files and existing training, internal verification and passive operational records. The terminal and SCALPING LAB are separate packages with separate versions. The review did not launch them, repeat training or issue broker requests. This public repository distributes documentation and authorised images, excluding executables, implementation source, weights, private operational records and credentials.
+The review examined installed package metadata, selected implementation files and existing training, internal verification and passive operational records. The terminal and SCALPING LAB are separate packages with separate versions. The review did not launch them, repeat training or issue broker requests. The terminal identifier above identifies the historical build inspected; it does not define the version of a subsequent public installer.
+
+The owner has designated the project for public release, with version **1.1.25** assigned to the Windows distribution. Its installer is being prepared and no executable is currently attached to a public release. The [release listing](https://github.com/michelegiletto-beep/multiagentic-platform/releases) will provide the checked installer, installation instructions, licence terms and checksum after publication. Package checks for 1.1.25 must be reported separately from the rc.49 inspection. The repository's source tree contains the dossier and authorised images; proprietary implementation source, weights, private operational records and credentials remain excluded. Publication status does not change the evidence categories or resolve the qualification limits recorded below.
 
 ## Implementation and recorded evidence
 
@@ -14,7 +16,7 @@ The review examined installed package metadata, selected implementation files an
 | SPINS — Special Instructions | Model artifacts, engine wiring, readiness records and hash-linked training reports | Documented local CPU fits concern synthetic user-policy imitation. Final gates and real-market validation remain separate. |
 | Learned profile selection | Scoped artifact validation, fixture rejection, setup-bound profiles and deterministic defaults | Model quality, deployment behaviour and comparative benefit remain to be evaluated. |
 | Offline training | Dataset export, temporal splits, model comparison and artifact-integrity code; documented PyTorch CPU runs | No verified GPU campaign is linked to the shipped models in the reviewed evidence. |
-| Optional LLM integration | Local scoped explanations, remote structured proposals and native contract compilation | The inspected release explicitly selects `NATIVE_ONLY` and disables both LLM paths. |
+| Optional LLM integration | Local scoped explanations, remote structured proposals and native contract compilation | The inspected build explicitly selects `NATIVE_ONLY` and disables both LLM paths. |
 | LLM fallback controls | Queue bounds, deadlines, cancellation, capacity deferral, backend checks and fallback results | No measured saturation, failover latency or end-to-end continuity result is supplied. |
 | Capital.com | Implemented account, market-data and execution-lifecycle adapter; documented live observations | Latest recorded passive audit, 16 October 2026: stale quotes despite connected status, diagnostic timeouts and degraded backend. Feed continuity unresolved. |
 | IG and OANDA | Implemented provider adapters and internal mock tests | Full live qualification and provider approval are not established. |
@@ -35,7 +37,7 @@ Internal software checks, mock provider tests and targeted benchmarks support sp
 
 ## Native operation and optional supervision
 
-The inspected release is configured for native operation. Optional LLM code remains present, but its activation is explicitly suppressed in this release. Public claims about enabled LLM behaviour must identify the relevant tested build and configuration. Implemented native defaults and fallback guards support a concrete validation programme; their existence does not establish uninterrupted autonomy under arbitrary failures.
+The inspected build is configured for native operation. Optional LLM code remains present, but its activation is explicitly suppressed in this build. Public claims about enabled LLM behaviour must identify the relevant tested build and configuration. Implemented native defaults and fallback guards support a concrete validation programme; their existence does not establish uninterrupted autonomy under arbitrary failures.
 
 VESPER remains a separate inference research design. Its RFC does not establish a working full-model runtime, a measured speedup or a completed platform integration.
 

@@ -4,7 +4,7 @@ This protocol specifies how Multiagentic Platform can be evaluated without publi
 
 ## Evidence categories
 
-Every externally stated claim should identify its scope and supporting record. The 19 October 2026 review considered terminal release candidate 1.1.25-rc.49, separate SCALPING LAB package 2.2.6, selected implementation files and existing records. The review did not launch the programs, contact brokers or execute trades. Static inspection, internal test records, training provenance and operational observations are different evidence categories.
+Every externally stated claim should identify its scope and supporting record. The 19 October 2026 review considered historical terminal build 1.1.25-rc.49, separate SCALPING LAB package 2.2.6, selected implementation files and existing records. The review did not launch the programs, contact brokers or execute trades. Static inspection, internal test records, training provenance and operational observations are different evidence categories. The project's public release designation does not alter those records; a later installer must identify its own version and the checks actually completed for that package.
 
 | Category | Evidence available in this dossier | Permitted conclusion |
 | --- | --- | --- |

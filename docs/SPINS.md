@@ -1,6 +1,6 @@
 # SPINS — Special Instructions
 
-SPINS formalises user defined operating instructions into specialised learned policy components within Multiagentic Platform. Its purpose is to associate a bounded interpretation of an instruction with structured outputs that the native workflow can examine. The inspected release contains multiple SPINS modules, packaged model artifacts and native integration code. SPINS does not depend on an LLM in the inspected `NATIVE_ONLY` configuration.
+SPINS formalises user defined operating instructions into specialised learned policy components within Multiagentic Platform. Its purpose is to associate a bounded interpretation of an instruction with structured outputs that the native workflow can examine. The inspected build contains multiple SPINS modules, packaged model artifacts and native integration code. SPINS does not depend on an LLM in the inspected `NATIVE_ONLY` configuration.
 
 ## From instruction to executable context
 

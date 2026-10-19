@@ -6,7 +6,7 @@ Component overview; the disabled LLM paths and separate research applications re
 
 **Multiagent trading research and portfolio allocation**
 
-This document describes the implementation boundaries reviewed on 19 October 2026: terminal release candidate 1.1.25-rc.49 and the separate SCALPING LAB package 2.2.6. Selected code and training, software-verification and passive operational records were reviewed without launching the application, contacting a broker or placing trades. Proprietary recipes and thresholds remain outside this account. [Implementation status](IMPLEMENTATION_STATUS.md) distinguishes implemented components from outstanding qualification.
+This document describes the implementation boundaries reviewed on 19 October 2026: historical terminal build 1.1.25-rc.49 and the separate SCALPING LAB package 2.2.6. Selected code and training, software-verification and passive operational records were reviewed without launching the application, contacting a broker or placing trades. Proprietary recipes and thresholds remain outside this account. [Implementation status](IMPLEMENTATION_STATUS.md) distinguishes the project's public release status, the inspected builds and outstanding qualification.
 
 ## Product lineage and system boundary
 
@@ -48,7 +48,7 @@ The installed source includes separate local-language and remote supervisory int
 
 The inspected compiler and caller code validate contracts, bind proposals to account and operation scope, and reject stale or incompatible context. Authoritative execution remains in the native worker. This separation provides an implemented boundary between semantic proposals and execution authority; its effectiveness still requires operational testing.
 
-Release candidate rc.49 explicitly sets `NATIVE_ONLY`. Its supervisor suppresses LLM calls, does not start the local language-model service and disables the remote operator. The existence of optional integration code therefore does not mean that this inspected release operates under active LLM supervision.
+The inspected build 1.1.25-rc.49 explicitly sets `NATIVE_ONLY`. Its supervisor suppresses LLM calls, does not start the local language-model service and disables the remote operator. The existence of optional integration code therefore does not mean that this inspected build operates under active LLM supervision.
 
 LLM coordination can be evaluated for its contribution to interpreting heterogeneous evidence and selecting permitted tasks in a separately identified enabled condition. That evaluation must measure invalid proposals, changes in plan, resource costs and latency against the native reference workflow.
 

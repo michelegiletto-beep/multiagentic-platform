@@ -2,13 +2,21 @@
 
 **Multiagent trading research and portfolio allocation**
 
-[Platform dossier](docs/ARCHITECTURE.md) · [SPINS](docs/SPINS.md) · [Scalping Lab](docs/SCALPING_LAB.md) · [VESPER](docs/VESPER.md) · [Support development](#support)
+[Available releases](#download) · [Hugging Face Space](https://huggingface.co/spaces/Magic51/multiagentic-platform) · [Platform dossier](docs/ARCHITECTURE.md) · [SPINS](docs/SPINS.md) · [Scalping Lab](docs/SCALPING_LAB.md) · [VESPER](docs/VESPER.md) · [Support development](#support)
 
 Multiagentic Platform is the flagship trading research and portfolio allocation programme developed by Michele Giletto at System Labs. It develops the Reasoning Agent into a coordinated environment for market analysis, statistical learning and bounded decision workflows. In its first equity-portfolio application, agents work with market observations, positions, exposure and proposed allocation decisions within a common operating context.
 
-The installed implementation combines native analytical services, SPINS model components, broker adapters and explicit execution controls. Optional LLM integration code is present; the inspected release selects `NATIVE_ONLY` and disables those paths. Shipped SPINS artifacts are linked to documented local CPU training runs. VESPER is a complementary research track for inference under memory and I/O constraints.
+The installed implementation combines native analytical services, SPINS model components, broker adapters and explicit execution controls. Optional LLM integration code is present; the inspected build selects `NATIVE_ONLY` and disables those paths. Shipped SPINS artifacts are linked to documented local CPU training runs. VESPER is a complementary research track for inference under memory and I/O constraints.
 
-Installed release candidate **1.1.25-rc.49** was inspected statically on **19 October 2026**, alongside training, software-verification and passive operational records. The review did not launch the program, call brokers or place trades. This repository distributes the public dossier, not the runtime, source code, weights, training data or credentials.
+**Public release version: 1.1.25.** The Windows installer is being prepared for publication through GitHub Releases. Availability of the executable is recorded in [Download](#download).
+
+Installed build **1.1.25-rc.49** was inspected statically on **19 October 2026**, alongside training, software-verification and passive operational records. That identifier is retained to identify the historical evidence reviewed; the public installer has been assigned version **1.1.25** and requires its own package checks. The review did not launch the program, call brokers or place trades. Public release status does not establish additional operational qualification. Implementation source, model weights, training data and credentials remain proprietary and excluded from this repository.
+
+## Download
+
+[View available releases](https://github.com/michelegiletto-beep/multiagentic-platform/releases)
+
+No Windows installer is currently attached to a public release. GitHub's **Download ZIP** downloads this documentation repository, not the application. The **1.1.25** installer, installation instructions, licence terms and SHA-256 checksum will be added to the release record after the package has been checked and uploaded. Checks of that installer will be reported separately from the historical build inspection below.
 
 ## Interface
 
@@ -26,7 +34,7 @@ The inspected implementation separates these responsibilities:
 | --- | --- |
 | Statistical and neural components | Load versioned analytical and SPINS model artifacts; final activation and validation gates remain explicit. |
 | Specialist agents | Perform bounded market analysis and portfolio research tasks, exchanging structured results. |
-| Optional LLM supervision | Produce scoped explanations or structured proposals; disabled in the inspected native-only release. |
+| Optional LLM supervision | Produce scoped explanations or structured proposals; disabled in the inspected native-only build. |
 | Deterministic control layer | Apply permissions, portfolio exposure limits, admission rules and execution checks. |
 | Broker adapters | Translate authorised execution requests into provider-specific order and account semantics. |
 | Audit and recovery services | Preserve trading decision context, reconcile portfolio and execution state, and support controlled recovery. |
@@ -37,7 +45,7 @@ The engineering difficulty lies in the interaction of temporal learning, changin
 
 | Statement | Evidence category | Current interpretation |
 | --- | --- | --- |
-| Release candidate 1.1.25-rc.49 and native agent workflow | Source-inspected implementation | Installed package and implementation examined; no execution test in this audit. |
+| Inspected build 1.1.25-rc.49 and native agent workflow | Source-inspected implementation | Historical installed package and implementation examined; no execution test in this audit. |
 | SPINS — Special Instructions | Inspected artifacts and documented CPU training | Shipped model artifacts match training records; final gates remain. Synthetic policy imitation does not establish profit prediction. |
 | SCALPING LAB 2.2.6 | Separate offline research implementation and campaign records | Includes inconclusive and non-baseline-beating results; no production promotion implied. |
 | Optional LLM supervision and fallback controls | Source-inspected implementation | Code exists; LLM paths disabled by `NATIVE_ONLY`. Saturated failover remains unmeasured. |
@@ -49,7 +57,7 @@ No parameter count, model depth, training scale, predictive accuracy, execution 
 
 ## Public architecture and evaluation
 
-[Implementation status](docs/IMPLEMENTATION_STATUS.md) records the inspected releases and limits. [Architecture](docs/ARCHITECTURE.md) explains component boundaries. [Validation](docs/VALIDATION.md) defines the evaluation protocol. [SCALPING LAB](docs/SCALPING_LAB.md) covers offline experiments; [VESPER](docs/VESPER.md) covers inference research.
+[Implementation status](docs/IMPLEMENTATION_STATUS.md) records the inspected builds and limits. [Architecture](docs/ARCHITECTURE.md) explains component boundaries. [Validation](docs/VALIDATION.md) defines the evaluation protocol. [SCALPING LAB](docs/SCALPING_LAB.md) covers offline experiments; [VESPER](docs/VESPER.md) covers inference research.
 
 The public record includes the [platform overview](https://giletto-systems-lab.michele-giletto.chatgpt.site/reasoning-agent.html), [VESPER project](https://giletto-systems-lab.michele-giletto.chatgpt.site/projects/vesper.html) and [VESPER RFC 0001](https://giletto-systems-lab.michele-giletto.chatgpt.site/materials/VESPER_RFC_0001.md). These sources document the programme and its stated development status; they do not substitute for implementation inspection or independent testing.
 
@@ -69,4 +77,4 @@ Contact [Michele Giletto](mailto:michele.giletto@gmail.com?subject=Multiagentic%
 
 ## Copyright
 
-© 2026 Michele Giletto. All rights reserved. This public dossier is not an open source software release. Public visibility does not grant a broad licence to the platform, its models or its implementation. See [COPYRIGHT.md](COPYRIGHT.md). Citation metadata is provided in [CITATION.cff](CITATION.cff).
+© 2026 Michele Giletto. All rights reserved. Multiagentic Platform is proprietary software. Public release and download availability do not grant rights to the implementation source or model weights. Use of a distributed installer is governed by the licence supplied with that release; this dossier grants no broad software licence. See [COPYRIGHT.md](COPYRIGHT.md). Citation metadata is provided in [CITATION.cff](CITATION.cff).

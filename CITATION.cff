@@ -22,7 +22,10 @@ abstract: >-
   Public technical documentation for the Multiagentic Platform programme,
   including its inspected implementation boundaries, complementary
   relationship to VESPER inference research, and proposed validation protocol.
-  This dossier does not distribute the platform runtime or trained model weights.
+  The project is designated for public release; compiled installer availability
+  and software licensing are recorded separately in GitHub Releases.
+  This citation identifies the dossier, not a software binary version.
+  Proprietary implementation source and model weights are not distributed here.
 keywords:
   - multiagent systems
   - statistical learning
